@@ -25,7 +25,7 @@ const Cal = () => {
   };
   const scheduleObj = useRef(null);
   const data = extend([], [], null, true);
-  return (<div className='schedule-control-section'>
+  return (<div className=' justify-center flex w-screen schedule-control-section'>
     <div className='col-lg-9 control-section'>
       <div>
         <label htmlFor="cultures">Culture</label>

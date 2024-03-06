@@ -27,7 +27,7 @@ function App() {
             <Route path="/cal" element={<Cal />} />
             <Route path="/Stuform" element={<Studentform />} />
           </Routes>
-          <div className='ml-20'>
+          <div >
 
           <Footer/></div>
         </BrowserRouter>

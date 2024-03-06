@@ -39,8 +39,8 @@ export default function Studentform() {
             .catch(err=> console.error(err) )
     }
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="space-y-12 ml-10">
+    <form onSubmit={handleSubmit} className="space-y-12 m-5 border-solid border-4 border-[#000]  rounded-3xl p-4" >
+      <div className="space-y-12 m-10 ">
         <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base font-semibold leading-7 text-gray-900">Profile</h2>
           <p className="mt-1 text-sm leading-6 text-gray-600">
@@ -108,7 +108,7 @@ export default function Studentform() {
                   <div className="mt-4 flex text-sm leading-6 text-gray-600">
                     <label
                       htmlFor="file-upload"
-                      className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
+                      className="relative cursor-pointer rounded-md bg-white font-semibold text-[#0077ff] focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
                     >
                       <span>Upload a file</span>
                       <input id="file-upload" name="file-upload" type="file" className="sr-only" onChange={handleImageChange} accept="image/*" />
@@ -258,7 +258,7 @@ export default function Studentform() {
                     value="option1"
                     checked={selectedOption === 'option1'}
           onChange={handleOptionChange}
-                    className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                    className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
                   />
                   <label htmlFor="push-everything" className="block text-sm font-medium leading-6 text-gray-900">
                     I have received a passphrase from my college placement cell
@@ -272,7 +272,7 @@ export default function Studentform() {
                     value="option2"
                     checked={selectedOption === 'option1'}
           onChange={handleOptionChange}
-                    className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                    className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
                   />
                   <label htmlFor="push-email" className="block text-sm font-medium leading-6 text-gray-900">
                    I'm here to apply for job
@@ -291,7 +291,7 @@ export default function Studentform() {
         </button>
         <button
           type="submit"
-          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className="rounded-md bg-[#0077ff] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
           Save
         </button>
