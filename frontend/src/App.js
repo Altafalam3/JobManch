@@ -17,7 +17,7 @@ function App() {
         <BrowserRouter>
         <div className='mt-0 '>
           <Sidebar/></div>
-        <div className=' grid justify-items-end ml-20'>
+        <div className=' grid justify-items-end '>
           <Navbar /></div>
          
           
