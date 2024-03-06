@@ -2,6 +2,9 @@ import {
   faBalanceScale,
   faFileAlt,
   faHome,
+  faBook,
+  faFile,
+  faBookBookmark,
   faInfoCircle,
   faQuestionCircle,
   faVideo
@@ -24,13 +27,13 @@ const Navbarlist = () => {
       title: "DocMaker",
       url: "/docum",
       cName: "Navlinks",
-      icon: faInfoCircle,
+      icon: faFile,
     },
     {
       title: "Summarizer",
       url: "/textsum",
       cName: "Navlinks",
-      icon: faVideo,
+      icon:faBookBookmark ,
     },
     {
       title: "Resources",
