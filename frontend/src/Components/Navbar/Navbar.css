@@ -1,18 +1,18 @@
-.navbar {
+ .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 30px 20px;
-    /* background-color: rgba(0, 0, 0, 0.9);
-     */
+    /* background-color: rgba(0, 0, 0, 0.9);*/
+     
     background: linear-gradient(180deg,
             #eaeeff 0%,
             rgba(234, 238, 255, 0.96875) 80%,
             rgba(234, 238, 255, 0) 100%);
     /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); */
     height: 120px;
-}
-
+} 
+/*
 .logo-links {
     text-decoration: none;
     color: #1e2340;
@@ -50,7 +50,7 @@
 .active {
     font-weight: 700;
     background-color: indigo;
-    /* font-size: 25px; */
+    /* font-size: 25px; 
     padding: 5px 8px;
     border-radius: 20px;
     transition: all 0.2s ease-in;
@@ -82,7 +82,7 @@ h2 {
     color: #1e2340;
 }
 
-/* Mobile styles */
+ 
 @media screen and (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -99,7 +99,7 @@ h2 {
 
     .logo img {
         width: 50px;
-        /* Adjust the logo size for mobile */
+       
     }
 
     .navitems {
@@ -111,10 +111,10 @@ h2 {
 
     .navitems li {
         margin-right: 0;
-        /* Remove right margin for list items */
+       
     }
 
     .login-button {
         margin-top: 20px;
     }
-}
+} */

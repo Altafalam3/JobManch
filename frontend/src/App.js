@@ -15,19 +15,19 @@ function App() {
     <UserProvider>
       <>
         <BrowserRouter>
-        <div className='mt-0 sticky'>
+        <div className='mt-0 '>
           <Sidebar/></div>
-        <div className='ml-20 fixed top-0'>
+        <div className=' grid justify-items-end ml-20'>
           <Navbar /></div>
          
           
           <Routes>
-          <><div className=''>
+          
             <Route path="/" element={<Login />} />
             <Route path="/cal" element={<Cal />} />
-            <Route path="/Stuform" element={<Studentform />} /></div></>
+            <Route path="/Stuform" element={<Studentform />} />
           </Routes>
-          <div className='ml-20'>
+          <div className='ml-5'>
 
           <Footer/></div>
         </BrowserRouter>

@@ -4,7 +4,7 @@ import Logo from './legalhammer.jpg';
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer flex flex-column">
       <div className="footer_top">
         <div className="container">
           <div className="row">
@@ -79,12 +79,12 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="copy-right_text">
+      <div className="copy-right_text ml-60" >
         <div className="container">
           <div className="footer_border" />
           <div className="row">
             <div className="col-12">
-              <p className="copy_right">
+              <p className="copy_right ">
                 Copyright © All rights reserved 2023| MastRoom
               </p>
             </div>

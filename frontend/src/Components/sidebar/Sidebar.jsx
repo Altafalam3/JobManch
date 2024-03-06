@@ -3,7 +3,7 @@ import React from 'react'
 const Sidebar = () => {
   return (
     
-      <div className="h-screen bg-gray-100">
+     <>
   <div className="fixed left-0 min-h-screen select-none border bg-gray-800 shadow">
     <div className="[&>.tooltip]:hover:opacity-100 h-14 w-16 cursor-pointer p-3">
       <div className="border-gray pointer-events-auto absolute flex h-10 w-10 items-center justify-center rounded-full text-gray-200 shadow duration-100 hover:bg-gray-700">
@@ -52,7 +52,7 @@ const Sidebar = () => {
       <div className="tooltip absolute mt-3 ml-16 w-max rounded-md bg-gray-700 p-1 text-xs text-white opacity-0 shadow-md duration-200">Add More</div>
     </div>
   </div>
-</div>
+</>
 
     
   )
