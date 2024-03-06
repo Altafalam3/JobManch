@@ -5,18 +5,31 @@ import Footer from './Components/Footer/Footer.js'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { UserProvider } from './context/UserContext';
 
+import Sidebar from './Components/sidebar/Sidebar.jsx';
+import Cal from './Pages/calendar/cal.jsx';
+import Studentform from './Pages/Studentform.jsx';
+
 function App() {
 
   return (
     <UserProvider>
       <>
         <BrowserRouter>
-          <Navbar />
+        <div className='mt-0 sticky'>
+          <Sidebar/></div>
+        <div className='ml-20 fixed top-0'>
+          <Navbar /></div>
+         
+          
           <Routes>
-            <Route path="/login" element={<Login />} />
-            {/* <Route path="/" element={<Home />} /> */}
+          <><div className=''>
+            <Route path="/" element={<Login />} />
+            <Route path="/cal" element={<Cal />} />
+            <Route path="/Stuform" element={<Studentform />} /></div></>
           </Routes>
-          <Footer />
+          <div className='ml-20'>
+
+          <Footer/></div>
         </BrowserRouter>
       </>
     </UserProvider>
