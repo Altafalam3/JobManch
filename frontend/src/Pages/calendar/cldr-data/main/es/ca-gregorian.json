@@ -13,21 +13,21 @@
               "months": {
                 "format": {
                   "abbreviated": {
-                    "1": "ene.",
+                    "1": "Jan.",
                     "2": "feb.",
                     "3": "mar.",
-                    "4": "abr.",
+                    "4": "apr.",
                     "5": "may.",
                     "6": "jun.",
                     "7": "jul.",
-                    "8": "ago.",
+                    "8": "aug.",
                     "9": "sept.",
                     "10": "oct.",
                     "11": "nov.",
-                    "12": "dic."
+                    "12": "dec."
                   },
                   "narrow": {
-                    "1": "E",
+                    "1": "J",
                     "2": "F",
                     "3": "M",
                     "4": "A",
@@ -41,37 +41,37 @@
                     "12": "D"
                   },
                   "wide": {
-                    "1": "enero",
-                    "2": "febrero",
-                    "3": "marzo",
-                    "4": "abril",
-                    "5": "mayo",
-                    "6": "junio",
-                    "7": "julio",
-                    "8": "agosto",
-                    "9": "septiembre",
-                    "10": "octubre",
-                    "11": "noviembre",
-                    "12": "diciembre"
+                    "1": "January",
+                    "2": "februray",
+                    "3": "march",
+                    "4": "april",
+                    "5": "may",
+                    "6": "june",
+                    "7": "july",
+                    "8": "august",
+                    "9": "september",
+                    "10": "october",
+                    "11": "november",
+                    "12": "december"
                   }
                 },
                 "stand-alone": {
                   "abbreviated": {
-                    "1": "ene.",
+                    "1": "jan.",
                     "2": "feb.",
                     "3": "mar.",
-                    "4": "abr.",
+                    "4": "apr.",
                     "5": "may.",
                     "6": "jun.",
                     "7": "jul.",
-                    "8": "ago.",
+                    "8": "aug.",
                     "9": "sept.",
                     "10": "oct.",
                     "11": "nov.",
-                    "12": "dic."
+                    "12": "dec."
                   },
                   "narrow": {
-                    "1": "E",
+                    "1": "J",
                     "2": "F",
                     "3": "M",
                     "4": "A",
@@ -85,96 +85,95 @@
                     "12": "D"
                   },
                   "wide": {
-                    "1": "enero",
-                    "2": "febrero",
-                    "3": "marzo",
-                    "4": "abril",
-                    "5": "mayo",
-                    "6": "junio",
-                    "7": "julio",
-                    "8": "agosto",
-                    "9": "septiembre",
-                    "10": "octubre",
-                    "11": "noviembre",
-                    "12": "diciembre"
-                  }
+                    "1": "January",
+                    "2": "februray",
+                    "3": "march",
+                    "4": "april",
+                    "5": "may",
+                    "6": "june",
+                    "7": "july",
+                    "8": "august",
+                    "9": "september",
+                    "10": "october",
+                    "11": "november",
+                    "12": "december"
                 }
               },
               "days": {
                 "format": {
                   "abbreviated": {
-                    "sun": "dom.",
-                    "mon": "lun.",
-                    "tue": "mar.",
-                    "wed": "mié.",
-                    "thu": "jue.",
-                    "fri": "vie.",
-                    "sat": "sáb."
+                    "sun": "sun.",
+                    "mon": "mon.",
+                    "tue": "tue.",
+                    "wed": "wed.",
+                    "thu": "thu.",
+                    "fri": "fri.",
+                    "sat": "sat."
                   },
                   "narrow": {
-                    "sun": "D",
-                    "mon": "L",
-                    "tue": "M",
-                    "wed": "X",
-                    "thu": "J",
-                    "fri": "V",
+                    "sun": "S",
+                    "mon": "M",
+                    "tue": "T",
+                    "wed": "W",
+                    "thu": "T",
+                    "fri": "F",
                     "sat": "S"
                   },
                   "short": {
-                    "sun": "DO",
-                    "mon": "LU",
-                    "tue": "MA",
-                    "wed": "MI",
-                    "thu": "JU",
-                    "fri": "VI",
+                    "sun": "SU",
+                    "mon": "MO",
+                    "tue": "TU",
+                    "wed": "WD",
+                    "thu": "TH",
+                    "fri": "FR",
                     "sat": "SA"
                   },
                   "wide": {
-                    "sun": "domingo",
-                    "mon": "lunes",
-                    "tue": "martes",
-                    "wed": "miércoles",
-                    "thu": "jueves",
-                    "fri": "viernes",
-                    "sat": "sábado"
+                    "sun": "Sunday",
+                    "mon": "Monday",
+                    "tue": "Tuesday",
+                    "wed": "Wednesday",
+                    "thu": "Thursday",
+                    "fri": "Friday",
+                    "sat": "Saturday"
                   }
                 },
                 "stand-alone": {
                   "abbreviated": {
-                    "sun": "dom.",
-                    "mon": "lun.",
-                    "tue": "mar.",
-                    "wed": "mié.",
-                    "thu": "jue.",
-                    "fri": "vie.",
-                    "sat": "sáb."
+                    "sun": "sun.",
+                    "mon": "mon.",
+                    "tue": "tue.",
+                    "wed": "wed.",
+                    "thu": "thu.",
+                    "fri": "fri.",
+                    "sat": "sat."
                   },
                   "narrow": {
-                    "sun": "D",
-                    "mon": "L",
-                    "tue": "M",
-                    "wed": "X",
-                    "thu": "J",
-                    "fri": "V",
+                    "sun": "S",
+                    "mon": "M",
+                    "tue": "T",
+                    "wed": "W",
+                    "thu": "T",
+                    "fri": "F",
                     "sat": "S"
                   },
                   "short": {
-                    "sun": "DO",
-                    "mon": "LU",
-                    "tue": "MA",
-                    "wed": "MI",
-                    "thu": "JU",
-                    "fri": "VI",
+                    "sun": "SU",
+                    "mon": "MO",
+                    "tue": "TU",
+                    "wed": "WD",
+                    "thu": "TH",
+                    "fri": "FR",
                     "sat": "SA"
                   },
                   "wide": {
-                    "sun": "domingo",
-                    "mon": "lunes",
-                    "tue": "martes",
-                    "wed": "miércoles",
-                    "thu": "jueves",
-                    "fri": "viernes",
-                    "sat": "sábado"
+                    "sun": "Sunday",
+                    "mon": "Monday",
+                    "tue": "Tuesday",
+                    "wed": "Wednesday",
+                    "thu": "Thursday",
+                    "fri": "Friday",
+                    "sat": "Saturday"
                   }
                 }
               },
@@ -557,5 +556,5 @@
         }
       }
     }
-  }
+    }}
   

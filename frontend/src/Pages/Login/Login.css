@@ -87,6 +87,7 @@
 
 .page {
    right: 0;
+   font-size: larger;font-weight: 600;
    color: #fff;
    border-radius: 0 20px 20px 0;
    transform-origin: left center;
@@ -106,15 +107,24 @@
 .front {
    /* background: linear-gradient(-45deg, #FFCF00 0%, #FC4F4F 100%) no-repeat 0 0/200%; */
    /* background-color: #a04625; */
-   background-image: url('https://imagery.hoteltonight.com/mobile_web/featured/santa-monica-proper-hotel-bed.jpg?fp-x=0.5&fp-y=0.55&fit=crop&dpr=1&fm=pjpg&q=25&w=1200&h=500&auto=compress');
+   /* background-image: url('./download.jpeg'); */
+   background: linear-gradient(to bottom,
+   #8fb6e3 10%,
+           rgb(111, 174, 245) 80%,
+           rgba(0,119,255, 0.7) 100%) ;
+   font: 800;
    background-size: cover;
    background-repeat: no-repeat;
    z-index: 3;
 }
 
 .back {
-   background-image: url('https://imagery.hoteltonight.com/mobile_web/featured/santa-monica-proper-hotel-bed.jpg?fp-x=0.5&fp-y=0.55&fit=crop&dpr=1&fm=pjpg&q=25&w=1200&h=500&auto=compress');
+   background: linear-gradient(to bottom,
+   #8fb6e3 10%,
+           rgb(111, 174, 245) 80%,
+           rgba(0,119,255, 0.7) 100%) ;
    z-index: 2;
+   background-image: url('./download (1).jpeg');
    background-size: cover;
    background-repeat: no-repeat;
 }
@@ -295,7 +305,7 @@
    border-color: red;
    background: transparent;
    padding: 20px;
-   color: red;
+   color: #FFF;
    border-radius: 15px;
 }
 

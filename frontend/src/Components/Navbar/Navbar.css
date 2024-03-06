@@ -6,9 +6,9 @@
     /* background-color: rgba(0, 0, 0, 0.9);*/
      
     background: linear-gradient(180deg,
-            #eaeeff 0%,
-            rgba(234, 238, 255, 0.96875) 80%,
-            rgba(234, 238, 255, 0) 100%);
+    #8fb6e3 10%,
+            rgb(111, 174, 245) 80%,
+            rgba(0,119,255, 0.7) 100%);
     /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); */
     height: 120px;
 } 

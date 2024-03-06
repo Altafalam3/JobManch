@@ -3,8 +3,9 @@ import React from 'react'
 const Sidebar = () => {
   return (
     
-     <>
-  <div className="fixed left-0 min-h-screen select-none border bg-gray-800 shadow">
+    // bg-[#0077FF]
+    <>
+  <div className="fixed w-20 left-0 min-h-screen select-none border  bg-gradient-to-b from-[#8fb6e3] to-[#0077ff] ">
     <div className="[&>.tooltip]:hover:opacity-100 h-14 w-16 cursor-pointer p-3">
       <div className="border-gray pointer-events-auto absolute flex h-10 w-10 items-center justify-center rounded-full text-gray-200 shadow duration-100 hover:bg-gray-700">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
