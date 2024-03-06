@@ -1,12 +1,13 @@
 import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
+import 'react-datepicker/dist/react-datepicker.css';
 import axios from 'axios'
 import { useState } from 'react';
-
+import DatePicker from 'react-datepicker';
 import { useNavigate } from 'react-router-dom'
 export default function Studentform() {
-
-    const navigate=useNavigate();
-    const [selectedOption, setSelectedOption] = useState('option1');
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedOption, setSelectedOption] = useState('option1');
+  const navigate=useNavigate();
     const handleOptionChange = (event) => {
         setSelectedOption(event.target.value);
       };
@@ -17,6 +18,27 @@ export default function Studentform() {
     const file = event.target.files[0];
     setSelectedImage(file);
   };
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+  const handleDateChange = (date) => {
+  
+    if (date && date.target) {
+      const selectedValue = date.target.value;
+      setSelectedDate(selectedValue);
+
+    axios.post('your-api-endpoint', { date: selectedValue })
+      .then(response => {
+        console.log('url', response.data);
+       
+      })
+      .catch(error => {
+        console.error('Error making POST request:', error);
+      });
+  }};
+
     const [values, setValues]= useState({
         username:'',
         email:'',
@@ -48,24 +70,7 @@ export default function Studentform() {
           </p>
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-            <div className="sm:col-span-4">
-              <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
-                Username
-              </label>
-              <div className="mt-2">
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                  <span className="flex select-none items-center pl-3 text-gray-500 sm:text-sm">workcation.com/</span>
-                  <input
-                    type="text"
-                    name="username"
-                    id="username"
-                    autoComplete="username"
-                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                    placeholder="janesmith"
-                  />
-                </div>
-              </div>
-            </div>
+            
 
             <div className="col-span-full">
               <label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">
@@ -127,35 +132,9 @@ export default function Studentform() {
           <p className="mt-1 text-sm leading-6 text-gray-600">fill up your past Experience</p>
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-            <div className="sm:col-span-3">
-              <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
-                First name
-              </label>
-              <div className="mt-2">
-                <input
-                  type="text"
-                  name="first"
-                  id="first"
-                  autoComplete="given-name"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
+           
 
-            <div className="sm:col-span-3">
-              <label htmlFor="last-name" className="block text-sm font-medium leading-6 text-gray-900">
-                Last name
-              </label>
-              <div className="mt-2">
-                <input
-                  type="text"
-                  name="last"
-                  id="last"
-                  autoComplete="family-name"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
+            
 
             <div className="sm:col-span-4">
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -186,10 +165,11 @@ export default function Studentform() {
                 />
               </div>
             </div>
-
+           
          
+            <div className='sm:col-span-4 '>
 <label htmlFor="city" className="block text-sm font-medium leading-6 text-gray-900">
-                Education <details></details>
+                Education 
               </label>
             <div className="sm:col-span-2 sm:col-start-1">
               <label htmlFor="number" className="block text-sm font-medium leading-6 text-gray-900">
@@ -237,12 +217,62 @@ export default function Studentform() {
             </div>
           </div>
         </div>
+        </div>  
+        <div className="sm:col-span-2">
+              <label htmlFor="12th" className="block text-sm font-medium leading-6 text-gray-900">
+               Roll no.
+              </label>
+              <div className="mt-2">
+                <input
+                  type="number"
+                  name="roll"
+                  id="roll"
+                  autoComplete="roll"
+                  className="block w-400 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+        
+  <label htmlFor="cgpa" className="block text-sm font-medium leading-6 text-gray-900">
+               Enter DOB
+              </label>
+              <div className="relative max-w-sm">
+      <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+        <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+        </svg>
+      </div>
+      <DatePicker
+        selected={selectedDate}
+        onChange={handleDateChange}
+        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        placeholderText="Select date"
+      />
+    </div>
 
+<div className="p-2">
+
+  <div className="relative w-56">
+  <input className="peer hidden" type="checkbox" name="select-1" id="select-1" checked={isChecked}
+        onChange={handleCheckboxChange}  />
+  <label for="select-1" className="flex w-full cursor-pointer select-none rounded-lg border p-2 px-3 text-sm text-gray-700 ring-blue-400 peer-checked:ring">Select Department</label>
+  <svg xmlns="http://www.w3.org/2000/svg" className="pointer-events-none absolute right-0 top-3 ml-auto mr-5 h-4 text-gray-600 transition peer-checked:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+  <ul className="max-h-0 select-none flex-col overflow-hidden rounded-b-lg shadow-xl transition-all duration-300 peer-checked:max-h-56 peer-checked:py-3">
+    <li className="cursor-pointer px-3 py-2 text-sm text-gray-500 hover:bg-blue-500 hover:text-white">COMPS</li>
+    <li className="cursor-pointer px-3 py-2 text-sm text-gray-500 hover:bg-blue-500 hover:text-white">IT</li>
+    <li className="cursor-pointer px-3 py-2 text-sm text-gray-500 hover:bg-blue-500 hover:text-white">AIDS</li>
+    <li className="cursor-pointer px-3 py-2 text-sm text-gray-500 hover:bg-blue-500 hover:text-white">EXTC</li>
+    <li className="cursor-pointer px-3 py-2 text-sm text-gray-500 hover:bg-blue-500 hover:text-white">ELECTRICAL</li>
+    <li className="cursor-pointer px-3 py-2 text-sm text-gray-500 hover:bg-blue-500 hover:text-white">CHEMICAL</li>
+  </ul>
+</div>
+
+
+</div>
         <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base font-semibold leading-7 text-gray-900">Notifications</h2>
-          <p className="mt-1 text-sm leading-6 text-gray-600">
-            We'll always let you know about important changes, but you pick what else you want to hear about.
-          </p>
+          
 
           <div className="mt-10 space-y-10">
             
@@ -282,9 +312,126 @@ export default function Studentform() {
               </div>
             </fieldset>
           </div>
+          <div className="mt-10 space-y-10">
+            
+            <fieldset> 
+              <legend className="text-sm font-semibold leading-6 text-gray-900">please select Gender</legend>
+              {/* <p className="mt-1 text-sm leading-6 text-gray-600">These are delivered via SMS to your mobile phone.</p> */}
+              <div className="mt-6 space-y-6">
+                <div className="flex items-center gap-x-3">
+                  <input
+                    id="push-everything"
+                    name="push-notifications"
+                    type="radio"
+                    value="option1"
+                    checked={selectedOption === 'gender1'}
+          onChange={handleOptionChange}
+                    className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
+                  />
+                  <label htmlFor="push-everything" className="block text-sm font-medium leading-6 text-gray-900">
+                    Female
+                  </label>
+                </div>
+                <div className="flex items-center gap-x-3">
+                  <input
+                    id="push-email"
+                    name="push-notifications"
+                    type="radio"
+                    value="option2"
+                    checked={selectedOption === 'gender1'}
+          onChange={handleOptionChange}
+                    className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
+                  />
+                  <label htmlFor="push-email" className="block text-sm font-medium leading-6 text-gray-900">
+                   Male
+                  </label>
+                </div>
+                
+              </div>
+            </fieldset>
+            </div>
+            <div className="mt-10 space-y-10">
+            
+            <fieldset> 
+              <legend className="text-sm font-semibold leading-6 text-gray-900">Drop</legend>
+              {/* <p className="mt-1 text-sm leading-6 text-gray-600">These are delivered via SMS to your mobile phone.</p> */}
+              <div className="mt-6 space-y-6">
+                <div className="flex items-center gap-x-3">
+                  <input
+                    id="push-everything"
+                    name="push-notifications"
+                    type="radio"
+                    value="option1"
+                    checked={selectedOption === 'drop1'}
+          onChange={handleOptionChange}
+                    className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
+                  />
+                  <label htmlFor="push-everything" className="block text-sm font-medium leading-6 text-gray-900">
+                    yes
+                  </label>
+                </div>
+                <div className="flex items-center gap-x-3">
+                  <input
+                    id="push-email"
+                    name="push-notifications"
+                    type="radio"
+                    value="option2"
+                    checked={selectedOption === 'drop1'}
+          onChange={handleOptionChange}
+                    className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
+                  />
+                  <label htmlFor="push-email" className="block text-sm font-medium leading-6 text-gray-900">
+                   no
+                  </label>
+                </div>
+                
+              </div>
+            </fieldset>
+            </div>
+            <div className="mt-10 space-y-10">
+            
+            <fieldset> 
+              <legend className="text-sm font-semibold leading-6 text-gray-900">Active KT</legend>
+              {/* <p className="mt-1 text-sm leading-6 text-gray-600">These are delivered via SMS to your mobile phone.</p> */}
+              <div className="mt-6 space-y-6">
+                <div className="flex items-center gap-x-3">
+                  <input
+                    id="push-everything"
+                    name="push-notifications"
+                    type="radio"
+                    value="option1"
+                    checked={selectedOption === 'kt2'}
+          onChange={handleOptionChange}
+                    className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
+                  />
+                  <label htmlFor="push-everything" className="block text-sm font-medium leading-6 text-gray-900">
+                    yes
+                  </label>
+                </div>
+                <div className="flex items-center gap-x-3">
+                  <input
+                    id="push-email"
+                    name="push-notifications"
+                    type="radio"
+                    value="option2"
+                    checked={selectedOption === 'kt1'}
+          onChange={handleOptionChange}
+                    className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
+                  />
+                  <label htmlFor="push-email" className="block text-sm font-medium leading-6 text-gray-900">
+                   NO
+                  </label>
+                </div>
+                
+              </div>
+            </fieldset>
+            </div>
         </div>
       </div>
-
+      <h2 className="text-base font-semibold leading-7 text-gray-900">Notifications</h2>
+          <p className="mt-1 text-sm leading-6 text-gray-600">
+            We'll always let you know about important changes, but you pick what else you want to hear about.
+          </p>
       <div className="mt-6 flex items-center justify-end gap-x-6">
         <button type="button" className="text-sm font-semibold leading-6 text-gray-900">
           Cancel
