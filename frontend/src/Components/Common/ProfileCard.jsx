@@ -14,6 +14,7 @@ function ProfileCard({
     const [activeSection, setActiveSection] = useState(null);
 
     const toggleSection = (section) => {
+        console.log(section); // Add this line to check if section is received correctly
         setActiveSection(activeSection === section ? null : section);
     };
     console.log(activeSection);

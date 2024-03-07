@@ -12,9 +12,9 @@ function ChatDetail({ jobDetail }) {
         <div className="flex h-screen">
             {/* Clickable container */}
             <div className="cursor-pointer w-screen">
-                {/* Profile card */}
+                Profile card
 
-                {/* <div className="bg-[#18262e] rounded-lg p-4 mb-4"> */}
+                {<div className="bg-[#18262e] rounded-lg p-4 mb-4"> 
                 <ProfileCard
                     pp={jobDetail.company}
                     position={jobDetail.jobDescription}
@@ -23,9 +23,9 @@ function ChatDetail({ jobDetail }) {
                     status={jobDetail.documents}
                     timeAgo={jobDetail.upcomingSchedule}
                 />
-                {/* </div> */}
+                 </div> }
             </div>
-            {/* Bottom section */}
+            {/* Bottom section}
             {/* Input area or other components can be added here if needed */}
         </div>
     );

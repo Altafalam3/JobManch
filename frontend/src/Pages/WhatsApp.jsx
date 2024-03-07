@@ -4,8 +4,8 @@ import axios from "axios";
 import ChatDetail from "../Components/Common/ChatDetail"; // Import the ChatDetail component
 
 function Chats() {
-    const [jobApplications, setJobApplications] = useState();
-    const [selectedJobIndex, setSelectedJobIndex] = useState(null);
+    const [jobApplications, setJobApplications] = useState([]);
+    const [selectedJob, setSelectedJob] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -14,8 +14,7 @@ function Chats() {
                 setLoading(true);
                 const response = await axios.get("http://localhost:8800/api/company"); // Replace "your_port" with the port your backend server is running on
                 setJobApplications(response.data.data);
-                console.log(response.data.data)
-                // Assuming the response contains an array of jobs under the "data" key
+                console.log(response.data.data);
                 setLoading(false);
             } catch (error) {
                 console.error("Error fetching jobs:", error);
@@ -25,11 +24,11 @@ function Chats() {
         fetchJobs();
     }, []);
 
-    // // Handle click event for selecting a chat
     const handleChatClick = (job) => {
-        selectedJobIndex(job);
-        // onSelectChat(index); // Pass the selected chat index to the parent component
+        const index = jobApplications.indexOf(job);
+        setSelectedJob(index);
     };
+    
 
     return (
         <div className="flex flex-row overflow-y-scroll cursor-pointer h-200 w-screen">
@@ -43,13 +42,12 @@ function Chats() {
                         />
                     </div>
                 ))}
+            
             </div>
-            <div className="w-2/3">
+            <div className="w-2/3 bg:white">
                 {/* Render ChatDetail if a chat is selected */}
-                {selectedJobIndex !== null && (
-                    <ChatDetail
-                        jobDetail={selectedJobIndex}
-                    />
+                {selectedJob && (
+                    <ChatDetail jobDetail={jobApplications[selectedJob]}  />
                 )}
             </div>
         </div>
