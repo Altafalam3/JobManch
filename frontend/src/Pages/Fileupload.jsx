@@ -28,7 +28,7 @@ const Fileupload = () => {
           },
         });
 
-        console.log('Resume uploaded successfully:', response.data);
+        console.log('Resume 1 uploaded successfully:', response.data);
       } catch (error) {
         console.error('Error uploading file:', error);
       }
@@ -40,7 +40,7 @@ const Fileupload = () => {
           },
         });
 
-        console.log('Resume uploaded successfully:', response2.data);
+        console.log('Resume 2 uploaded successfully:', response2.data);
       } catch (error) {
         console.error('Error uploading file:', error);
       }
@@ -95,6 +95,9 @@ const Fileupload = () => {
               Browse
             </label>
           </p>
+          {jobDescription && (
+            <p className="mt-2 text-gray-600"> Job Description: {jobDescription.name}</p>
+          )}
         </div>
         <button onClick={handleFileSubmit} className="mt-4 rounded-full bg-blue-600 px-10 py-2 font-semibold text-white">
           Submit
