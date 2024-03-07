@@ -445,4 +445,3 @@ export default function AdminForm() {
         </form>
     );
 }
-}
