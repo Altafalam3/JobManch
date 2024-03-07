@@ -9,18 +9,17 @@ import Sidebar from "./Components/sidebar/Sidebar.jsx";
 import Cal from "./Pages/calendar/Admincal.jsx";
 import Studentform from "./Pages/Studentform.jsx";
 import AdminForm from "./Pages/AdminForm.jsx";
-<<<<<<< HEAD
+
 import WhatsApp2 from "./Pages/Whatsapp2.jsx";
 import Resources from "./Pages/Resources.jsx";
 import CourseDeets from "./Pages/CourseDeets.jsx";
 // import "bootstrap/dist/css/bootstrap.min.css";
-=======
+
 import Studentcal from "./Pages/Studentcal.jsx";
 import Forum from "./Pages/Forum.jsx";
 import Notification from "./Pages/Notification.jsx";
 import Post from "./Pages/Post.jsx";
 
->>>>>>> 34dc93c0a7e0a0a7e58bb01b7cfd29a10521bd2c
 function App() {
     return (
         <UserProvider>
@@ -38,7 +37,13 @@ function App() {
                         <Route path="/cal" element={<Cal />} />
                         <Route path="/stuform" element={<Studentform />} />
                         <Route path="/adminform" element={<AdminForm />} />
-<<<<<<< HEAD
+                        <Route path="/stucal" element={<Studentcal />} />
+                        <Route path="/forum" element={<Forum/>} />
+                        <Route path="/noti" element={<Notification/>} />
+                        <Route path="/post" element={<Post/>} />
+                        
+                        <Route path="/adminform" element={<AdminForm />} />
+
                         <Route path="/company" element={<WhatsApp2 />} />
                         <Route path="/resources" element={<Resources />} />
 
@@ -46,14 +51,12 @@ function App() {
                             path="/coursedeets/:courseTitle"
                             element={<CourseDeets />}
                         />
-=======
+
                         <Route path="/stucal" element={<Studentcal />} />
                         <Route path="/forum" element={<Forum/>} />
                         <Route path="/noti" element={<Notification/>} />
                         <Route path="/post" element={<Post/>} />
-                        
-                        
->>>>>>> 34dc93c0a7e0a0a7e58bb01b7cfd29a10521bd2c
+
                     </Routes>
                     <div>
                         <Footer />
@@ -63,5 +66,6 @@ function App() {
         </UserProvider>
     );
 }
+           
 
 export default App;
