@@ -1,0 +1,77 @@
+import chat1 from "../assets/chat1.png";
+
+export const jobApplications = [
+    {
+        pp: chat1,
+        position: "Analyst",
+        company: "Deloitte India",
+        location: "PAN India",
+        status: "Accepted",
+        timeAgo: "6 months ago",
+    },
+    {
+        pp: chat1,
+        position: "Executive - Chartering",
+        company: "ALLIANZ BULK CARR...",
+        location: "Mumbai",
+        status: "Not Selected",
+        timeAgo: "6 months ago",
+    },
+    {
+        pp: chat1,
+        position: "GRADUATE ENGINEER TRAINEES (GET)",
+        company: "Larsen & Toubro L...",
+        location: "PAN India",
+        status: "Not Selected",
+        timeAgo: "6 months ago",
+    },
+    {
+        pp: chat1,
+        position: "GET – Electrical / Mechanical",
+        company: "Princeton Digital...",
+        location: "Mumbai (Transferr...",
+        status: "Not Selected",
+        timeAgo: "6 months ago",
+    },
+    {
+        pp: chat1,
+        position: "Associate Data Engineer",
+        company: "IDFC First Bank",
+        location: "Mumbai",
+        status: "Not Selected",
+        timeAgo: "6 months ago",
+    },
+    {
+        pp: chat1,
+        position: "Analyst",
+        company: "BlackRock",
+        location: "Gurgaon / Mumbai",
+        status: "Not Selected",
+        timeAgo: "6 months ago",
+    },
+    {
+        pp: chat1,
+        position: "Associate - Engg - FTE",
+        company: "PwC India",
+        location: "PAN India",
+        status: "Not Selected",
+        timeAgo: "7 months ago",
+    },
+    {
+        pp: chat1,
+        position: "Graduate Engineer Trainee",
+        company: "Balmer Lawrie UAE...",
+        location: "Dubai - (UAE)",
+        status: "Not Selected",
+        timeAgo: "7 months ago",
+    },
+    {
+        pp: chat1,
+        position:
+            "Graduate Engineer Trainee (GET) and Master Engineer Trainee (MET)",
+        company: "Schneider Electric",
+        location: "Mysore, Mumbai, A...",
+        status: "Not Selected",
+        timeAgo: "7 months ago",
+    },
+];

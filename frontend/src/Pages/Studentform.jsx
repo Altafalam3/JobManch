@@ -76,7 +76,7 @@ export default function Studentform() {
     }
 
     axios
-      .post("http://localhost:8800/api/user/profile", formData2)
+      .patch("http://localhost:8800/api/users/update/65e84c08b03bad20a0bac9a9", formData2)
       .then((res) => {
         console.log(res);
         navigate("/");
@@ -242,11 +242,11 @@ export default function Studentform() {
           Enter DOB
         </label>
         <div className="relative max-w-sm">
-          <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+          {/* <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
             <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
               <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
             </svg>
-          </div>
+          </div> */}
           <input
             type="date"
             id="round1Date"
@@ -265,21 +265,22 @@ export default function Studentform() {
         <div className="p-2">
 
           <div className="relative w-56">
-            <input className="peer hidden" type="checkbox" name="select-1" id="select-1"
-              // checked={isChecked}
-              onChange={handleCheckboxChange} />
-            <label for="select-1" className="flex w-full cursor-pointer select-none rounded-lg border p-2 px-3 text-sm text-gray-700 ring-blue-400 peer-checked:ring">Select Department</label>
-            <svg xmlns="http://www.w3.org/2000/svg" className="pointer-events-none absolute right-0 top-3 ml-auto mr-5 h-4 text-gray-600 transition peer-checked:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-            <ul className="max-h-0 select-none flex-col overflow-hidden rounded-b-lg shadow-xl transition-all duration-300 peer-checked:max-h-56 peer-checked:py-3">
-              <li className="cursor-pointer px-3 py-2 text-sm text-gray-500 hover:bg-blue-500 hover:text-white">COMPS</li>
-              <li className="cursor-pointer px-3 py-2 text-sm text-gray-500 hover:bg-blue-500 hover:text-white">IT</li>
-              <li className="cursor-pointer px-3 py-2 text-sm text-gray-500 hover:bg-blue-500 hover:text-white">AIDS</li>
-              <li className="cursor-pointer px-3 py-2 text-sm text-gray-500 hover:bg-blue-500 hover:text-white">EXTC</li>
-              <li className="cursor-pointer px-3 py-2 text-sm text-gray-500 hover:bg-blue-500 hover:text-white">ELECTRICAL</li>
-              <li className="cursor-pointer px-3 py-2 text-sm text-gray-500 hover:bg-blue-500 hover:text-white">CHEMICAL</li>
-            </ul>
+            <label htmlFor="department" className="flex w-full cursor-pointer select-none  p-2 px-3 text-sm text-gray-700 ring-blue-400 peer-checked:ring">Select Department</label>
+            <select
+              className="rounded-lg border p-2 px-3"
+              name="departmentt"
+              id="departmentt"
+              value={values.department}
+              onChange={(e) => setValues({...values, department :e.target.value})}
+            >
+              <option value="" disabled>Select Department</option>
+              <option value="COMPS">COMPS</option>
+              <option value="IT">IT</option>
+              <option value="AIDS">AIDS</option>
+              <option value="EXTC">EXTC</option>
+              <option value="ELECTRICAL">ELECTRICAL</option>
+              <option value="CHEMICAL">CHEMICAL</option>
+            </select>
           </div>
 
 
@@ -295,12 +296,12 @@ export default function Studentform() {
               <div className="mt-6 space-y-6">
                 <div className="flex items-center gap-x-3">
                   <input
-                    id="push-passphrase"
+                    id="push-passphrase-yes"
                     name="push-passphrase"
                     type="radio"
                     value="yes"
                     checked={values.passphrase === "yes"}
-                    onChange={setValues({ ...values, [values.passphrase]: "yes" })}
+                    onChange={() => setValues({ ...values, passphrase: "yes" })}
                     className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
                   />
                   <label htmlFor="push-passphrase" className="block text-sm font-medium leading-6 text-gray-900">
@@ -309,12 +310,12 @@ export default function Studentform() {
                 </div>
                 <div className="flex items-center gap-x-3">
                   <input
-                    id="push-passphrase"
+                    id="push-passphrase-no"
                     name="push-passphrase"
                     type="radio"
                     value="no"
-                    checked={values.passphrase === false}
-                    onChange={setValues({ ...values, [values.passphrase]: false })}
+                    checked={values.passphrase === "no"}
+                    onChange={() => setValues({ ...values, passphrase: "no" })}
                     className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
                   />
                   <label htmlFor="push-passphrase" className="block text-sm font-medium leading-6 text-gray-900">
@@ -333,12 +334,12 @@ export default function Studentform() {
               <div className="mt-6 space-y-6">
                 <div className="flex items-center gap-x-3">
                   <input
-                    id="push-gender"
+                    id="push-gender-female"
                     name="push-gender"
                     type="radio"
                     value="Female"
                     checked={values.gender === "Female"}
-                    onChange={setValues({ ...values, [values.gender]: "Female" })}
+                    onChange={() => setValues({ ...values, gender: "Female" })}
                     className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
                   />
                   <label htmlFor="push-gender" className="block text-sm font-medium leading-6 text-gray-900">
@@ -347,12 +348,12 @@ export default function Studentform() {
                 </div>
                 <div className="flex items-center gap-x-3">
                   <input
-                    id="push-gender"
+                    id="push-gender-male"
                     name="push-gender"
                     type="radio"
                     value="Male"
                     checked={values.gender === "Male"}
-                    onChange={setValues({ ...values, [values.gender]: "Male" })}
+                    onChange={() => setValues({ ...values, gender: "Male" })}
                     className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
                   />
                   <label htmlFor="push-gender" className="block text-sm font-medium leading-6 text-gray-900">
@@ -369,12 +370,12 @@ export default function Studentform() {
                 <div className="mt-6 space-y-6">
                   <div className="flex items-center gap-x-3">
                     <input
-                      id="push-everything3"
-                      name="push-everything3"
+                      id="push-drop-yes"
+                      name="push-drop"
                       type="radio"
                       value="yes"
-                      checked={values.selectedDrop === true}
-                      onChange={setValues({ ...values, [values.drop]: true })}
+                      checked={values.drop === true}
+                      onChange={() => setValues({ ...values, drop: true })}
                       className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
                     />
                     <label htmlFor="push-everything3" className="block text-sm font-medium leading-6 text-gray-900">
@@ -383,15 +384,15 @@ export default function Studentform() {
                   </div>
                   <div className="flex items-center gap-x-3">
                     <input
-                      id="push-everything3"
-                      name="push-everything3"
+                      id="push-drop-no"
+                      name="push-drop"
                       type="radio"
                       value="no"
-                      checked={values.selectedDrop === false}
-                      onChange={setValues({ ...values, [values.drop]: false })}
+                      checked={values.drop === false}
+                      onChange={() => setValues({ ...values, drop: false })}
                       className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
                     />
-                    <label htmlFor="push-email3" className="block text-sm font-medium leading-6 text-gray-900">
+                    <label htmlFor="push-drop-no" className="block text-sm font-medium leading-6 text-gray-900">
                       No
                     </label>
                   </div>
@@ -404,30 +405,30 @@ export default function Studentform() {
                 <div className="mt-6 space-y-6">
                   <div className="flex items-center gap-x-3">
                     <input
-                      id="push-everything4"
-                      name="push-notifications-kt"
+                      id="push-kt-yes"
+                      name="push-kt"
                       type="radio"
                       value="yes"
-                      checked={values.selectedKT === true}
-                      onChange={setValues({ ...values, [values.kt]: true })}
+                      checked={values.kt === true}
+                      onChange={() => setValues({ ...values, kt: true })}
                       className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
                     />
-                    <label htmlFor="push-everything4" className="block text-sm font-medium leading-6 text-gray-900">
+                    <label htmlFor="push-kt-yes" className="block text-sm font-medium leading-6 text-gray-900">
                       Yes
                     </label>
                   </div>
                   <div className="flex items-center gap-x-3">
                     <input
-                      id="push-email4"
-                      name="push-notifications-kt"
+                      id="push-kt-no"
+                      name="push-kt"
                       type="radio"
                       value="no"
-                      checked={values.selectedKT === false}
-                      onChange={setValues({ ...values, [values.kt]: false })}
+                      checked={values.kt === false}
+                      onChange={() => setValues({ ...values, kt: false })}
                       className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
                     />
-                    <label htmlFor="push-email4" className="block text-sm font-medium leading-6 text-gray-900">
-                      NO
+                    <label htmlFor="push-kt-no" className="block text-sm font-medium leading-6 text-gray-900">
+                      No
                     </label>
                   </div>
                 </div>

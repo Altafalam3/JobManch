@@ -4,7 +4,7 @@
   "private": true,
   "proxy": "http://localhost:8800",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.4.2",
+    "@fortawesome/fontawesome-free": "^6.5.1",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
@@ -19,9 +19,15 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.5.0",
+<<<<<<< HEAD
+    "chart.js": "^4.4.2",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+=======
     "dotenv": "^16.4.5",
     "react": "^18.2.0",
     "react-datepicker": "^6.2.0",
+>>>>>>> 34dc93c0a7e0a0a7e58bb01b7cfd29a10521bd2c
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
     "react-scripts": "5.0.1",

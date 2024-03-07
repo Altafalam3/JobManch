@@ -37,20 +37,17 @@ const userSchema = mongoose.Schema(
       default:
         'https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg',
     },
-    // coverPhoto: String,
-    // email: String,
-    // contact: Number,
     tenth: Number,
     twelth: Number,
     cgpa: Number,
     roll: Number,
     dob: Date,
     department: String,
-    passphrase: Boolean,
+    passphrase: String,
     // job: Boolean,
     gender: String,
-    drop: Boolean,
-    kt: Boolean,
+    drop: String,
+    kt: String,
     isAdmin:{
       type:Boolean,
       default:false

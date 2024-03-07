@@ -26,6 +26,8 @@ export default function AdminForm() {
         const { name, value } = e.target;
         setValues({ ...values, [name]: value });
     };
+    console.log(values);
+    const handleSubmit = (e) => {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
