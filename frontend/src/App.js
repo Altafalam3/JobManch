@@ -9,7 +9,10 @@ import Sidebar from "./Components/sidebar/Sidebar.jsx";
 import Cal from "./Pages/calendar/cal.jsx";
 import Studentform from "./Pages/Studentform.jsx";
 import AdminForm from "./Pages/AdminForm.jsx";
-
+import WhatsApp2 from "./Pages/Whatsapp2.jsx";
+import Resources from "./Pages/Resources.jsx";
+import CourseDeets from "./Pages/CourseDeets.jsx";
+// import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
     return (
         <UserProvider>
@@ -27,6 +30,13 @@ function App() {
                         <Route path="/cal" element={<Cal />} />
                         <Route path="/Stuform" element={<Studentform />} />
                         <Route path="/adminform" element={<AdminForm />} />
+                        <Route path="/company" element={<WhatsApp2 />} />
+                        <Route path="/resources" element={<Resources />} />
+
+                        <Route
+                            path="/coursedeets/:courseTitle"
+                            element={<CourseDeets />}
+                        />
                     </Routes>
                     <div>
                         <Footer />
