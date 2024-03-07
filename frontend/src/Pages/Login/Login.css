@@ -124,7 +124,7 @@
            rgb(111, 174, 245) 80%,
            rgba(0,119,255, 0.7) 100%) ;
    z-index: 2;
-   background-image: url('./download (1).jpeg');
+   background-image: url('../../assets/download1.jpeg');
    background-size: cover;
    background-repeat: no-repeat;
 }

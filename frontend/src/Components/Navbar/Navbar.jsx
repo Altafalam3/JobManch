@@ -62,13 +62,21 @@ const Navbar = () => {
       </div>
     </button>
   </div>
+  <div>
+  <a href="javascript:void(0)" className="w-32 text-lg flex items-center justify-center gap-x-1 py-3 px-4 text-white font-medium bg-gray-800 hover:bg-gray-700 active:bg-gray-900 rounded-full md:inline-flex">
+                            Sign in
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                                <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
+                            </svg>
+                        </a>
+  </div>
     <div className="dropdown dropdown-end">
-      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+      {/* <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
           <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
         </div>
-      </div>
-      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+      </div> */}
+      {/* <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
         <li>
           <a className="justify-between">
             Profile
@@ -77,7 +85,15 @@ const Navbar = () => {
         </li>
         <li><a>Settings</a></li>
         <li><a>Logout</a></li>
-      </ul>
+      </ul> */}
+      
+      <details className="dropdown w-10  ml-5 mr-10">
+  <summary className="m-1 text-lg btn">Login</summary>
+  <ul className="p-2 shadow menu dropdown-content z-[1] text-lg bg-base-100 rounded-box w-52">
+    <li><a >As Admin</a></li>
+    <li><a>As student</a></li>
+  </ul>
+</details>
     </div>
   </div>
 </div>
