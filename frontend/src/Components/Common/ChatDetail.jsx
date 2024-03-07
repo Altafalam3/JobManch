@@ -1,27 +1,27 @@
 import React from "react";
 import ProfileCard from "./ProfileCard";
 
-function ChatDetail({ jobDetail, onClick }) {
+function ChatDetail({ jobDetail }) {
     if (!jobDetail) {
         return null; // Render nothing if jobDetail is undefined
     }
     console.log(jobDetail);
-    const { pp, position, company, location, status, timeAgo } = jobDetail;
+    // const { pp, position, company, location, status, timeAgo } = jobDetail;
 
     return (
         <div className="flex h-screen">
             {/* Clickable container */}
-            <div onClick={onClick} className="cursor-pointer w-screen">
+            <div className="cursor-pointer w-screen">
                 {/* Profile card */}
 
                 {/* <div className="bg-[#18262e] rounded-lg p-4 mb-4"> */}
                 <ProfileCard
-                    pp={pp}
-                    position={position}
-                    company={company}
-                    location={location}
-                    status={status}
-                    timeAgo={timeAgo}
+                    pp={jobDetail.company}
+                    position={jobDetail.jobDescription}
+                    company={jobDetail.stipend}
+                    location={jobDetail.duration}
+                    status={jobDetail.documents}
+                    timeAgo={jobDetail.upcomingSchedule}
                 />
                 {/* </div> */}
             </div>

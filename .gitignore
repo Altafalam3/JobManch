@@ -6,7 +6,9 @@ backend/node_modules
 backend/uploads
 /.pnp
 .pnp.js
-
+.wwebjs_auth
+.wwebjs_cache
+node_modules
 # testing
 /coverage
 

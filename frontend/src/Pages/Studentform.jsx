@@ -46,9 +46,6 @@ export default function Studentform() {
     }));
   };
 
-
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
