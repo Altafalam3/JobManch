@@ -16,14 +16,13 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    phone:{
+      type: Number,
+    },
+
     bio: {
       type: String,
       default: 'Available',
-    },
-    profilePic: {
-      type: String,
-      default:
-        'https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg',
     },
     contacts: [
       {
@@ -31,6 +30,31 @@ const userSchema = mongoose.Schema(
         ref: 'User',
       },
     ],
+    
+    about: String,
+    profilePic: {
+      type: String,
+      default:
+        'https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg',
+    },
+    // coverPhoto: String,
+    // email: String,
+    // contact: Number,
+    tenth: Number,
+    twelth: Number,
+    cgpa: Number,
+    roll: Number,
+    dob: Date,
+    department: String,
+    passphrase: Boolean,
+    // job: Boolean,
+    gender: String,
+    drop: Boolean,
+    kt: Boolean,
+    isAdmin:{
+      type:Boolean,
+      default:false
+    }
   },
   {
     timestamps: true,

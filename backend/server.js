@@ -4,10 +4,14 @@ import mongoDBConnect from './mongoDB/connection.js';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+
+import * as Server from 'socket.io';
+
 import userRoutes from './routes/user.js';
 import chatRoutes from './routes/chat.js';
 import messageRoutes from './routes/message.js';
-import * as Server from 'socket.io';
+import blogRoutes from './routes/blog.js';
+import companyRoutes from './routes/company.js'
 
 const app = express();
 
@@ -24,6 +28,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', userRoutes);
 app.use('/api/chat', chatRoutes);
 app.use('/api/message', messageRoutes);
+app.use('/api/blog', blogRoutes);
+app.use('/api/company', companyRoutes);
 
 mongoose.set('strictQuery', false);
 
