@@ -13,9 +13,12 @@ import WhatsApp2 from "./Pages/Whatsapp2.jsx";
 import Resources from "./Pages/Resources.jsx";
 import CourseDeets from "./Pages/CourseDeets.jsx";
 // import "bootstrap/dist/css/bootstrap.min.css";
+
 import Studentcal from "./Pages/Studentcal.jsx";
 import Forum from "./Pages/Forum.jsx";
 import Notification from "./Pages/Notification.jsx";
+import Post from "./Pages/Post.jsx";
+import Fileupload from "./Pages/Fileupload.jsx";
 
 function App() {
     return (
@@ -33,7 +36,14 @@ function App() {
                         <Route path="/" element={<Login />} />
                         <Route path="/cal" element={<Cal />} />
                         <Route path="/stuform" element={<Studentform />} />
-                        <Route path="/adminform" element={<AdminForm/>} />
+                        <Route path="/stucal" element={<Studentcal />} />
+                        <Route path="/forum" element={<Forum/>} />
+                        <Route path="/noti" element={<Notification/>} />
+                        <Route path="/post" element={<Post/>} />
+                        
+                        <Route path="/adminform" element={<AdminForm />} />
+                        <Route path="/file" element={<Fileupload />} />
+
                         <Route path="/company" element={<WhatsApp2 />} />
                         <Route path="/resources" element={<Resources />} />
 
@@ -41,11 +51,7 @@ function App() {
                             path="/coursedeets/:courseTitle"
                             element={<CourseDeets />}
                         />
-                        <Route path="/stucal" element={<Studentcal />} />
-                        <Route path="/forum" element={<Forum/>} />
-                        <Route path="/noti" element={<Notification/>} />
-                        
-                        
+
                     </Routes>
                     <div>
                         <Footer />
@@ -55,5 +61,6 @@ function App() {
         </UserProvider>
     );
 }
+           
 
 export default App;
