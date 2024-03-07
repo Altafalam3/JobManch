@@ -374,7 +374,7 @@ export default function Studentform() {
                       type="radio"
                       value="yes"
                       checked={values.selectedDrop === true}
-                      onChange={setValues({ ...values, [values.gender]: "Male" })}
+                      onChange={setValues({ ...values, [values.drop]: true })}
                       className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
                     />
                     <label htmlFor="push-everything3" className="block text-sm font-medium leading-6 text-gray-900">
@@ -387,8 +387,8 @@ export default function Studentform() {
                       name="push-everything3"
                       type="radio"
                       value="no"
-                      checked={values.selectedDrop === 'no'}
-                      // onChange={handleOptionChange}
+                      checked={values.selectedDrop === false}
+                      onChange={setValues({ ...values, [values.drop]: false })}
                       className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
                     />
                     <label htmlFor="push-email3" className="block text-sm font-medium leading-6 text-gray-900">
@@ -408,8 +408,8 @@ export default function Studentform() {
                       name="push-notifications-kt"
                       type="radio"
                       value="yes"
-                      checked={values.selectedKT === 'yes'}
-                      // onChange={handleOptionChange}
+                      checked={values.selectedKT === true}
+                      onChange={setValues({ ...values, [values.kt]: true })}
                       className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
                     />
                     <label htmlFor="push-everything4" className="block text-sm font-medium leading-6 text-gray-900">
@@ -422,8 +422,8 @@ export default function Studentform() {
                       name="push-notifications-kt"
                       type="radio"
                       value="no"
-                      checked={values.selectedKT === 'no'}
-                      // onChange={handleOptionChange}
+                      checked={values.selectedKT === false}
+                      onChange={setValues({ ...values, [values.kt]: false })}
                       className="h-4 w-4 border-gray-300 text-[#0077ff] focus:ring-indigo-600"
                     />
                     <label htmlFor="push-email4" className="block text-sm font-medium leading-6 text-gray-900">
