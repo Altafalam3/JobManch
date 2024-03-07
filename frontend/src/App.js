@@ -19,6 +19,7 @@ import Studentcal from "./Pages/Studentcal.jsx";
 import Forum from "./Pages/Forum.jsx";
 import Notification from "./Pages/Notification.jsx";
 import Post from "./Pages/Post.jsx";
+import Fileupload from "./Pages/Fileupload.jsx";
 
 function App() {
     return (
@@ -43,6 +44,7 @@ function App() {
                         <Route path="/post" element={<Post/>} />
                         
                         <Route path="/adminform" element={<AdminForm />} />
+                        <Route path="/file" element={<Fileupload />} />
 
                         <Route path="/company" element={<WhatsApp2 />} />
                         <Route path="/resources" element={<Resources />} />
