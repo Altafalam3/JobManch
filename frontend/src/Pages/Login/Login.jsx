@@ -143,7 +143,7 @@ const Login = () => {
                         {/* <button type="button" id="register" onClick={handleRegisterClick}>
                             Login
                         </button> */}
-                        <div className="group flex w-full cursor-pointer items-center justify-center rounded-md bg-[#0077FF] px-6 py-2 text-white transition">
+                        <div type="button" id="register" onClick={handleRegisterClick} className="group flex w-full cursor-pointer items-center justify-center rounded-md bg-[#0077FF] px-6 py-2 text-white transition">
   <span className="group flex w-full items-center justify-center rounded py-1 text-center font-bold" type="button" id="register" onClick={handleRegisterClick}> Sign Up </span>
   <svg className="flex-0 ml-4 h-6 w-6 transition-all group-hover:ml-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
     <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -172,9 +172,15 @@ const Login = () => {
                         </svg>
                         <h1>Hello !</h1>
                         <p>Enter your personal details and start the journey with us.</p>
-                        <button type="button" id="login" onClick={handleLoginClick}>
-                            Register
-                        </button>
+                        {/* <button type="button" id="login" onClick={handleLoginClick}>
+                           Sign In
+                        </button> */}
+                        <div type="button"  id="login" onClick={handleLoginClick} className="group flex w-full cursor-pointer items-center justify-center rounded-md bg-[#0077FF] px-6 py-2 text-white transition">
+  <span className="group flex w-full items-center justify-center rounded py-1 text-center font-bold" type="button" id="register" onClick={handleRegisterClick}> Sign In </span>
+  <svg className="flex-0 ml-4 h-6 w-6 transition-all group-hover:ml-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+  </svg>
+</div>
                     </div>
                 </div>
 

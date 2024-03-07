@@ -10,6 +10,7 @@ import Cal from "./Pages/calendar/Admincal.jsx";
 import Studentform from "./Pages/Studentform.jsx";
 import AdminForm from "./Pages/AdminForm.jsx";
 import Studentcal from "./Pages/Studentcal.jsx";
+import Forum from "./Pages/Forum.jsx";
 
 function App() {
     return (
@@ -29,6 +30,7 @@ function App() {
                         <Route path="/stuform" element={<Studentform />} />
                         <Route path="/adminform" element={<AdminForm />} />
                         <Route path="/stucal" element={<Studentcal />} />
+                        <Route path="/forum" element={<Forum/>} />
                         
                     </Routes>
                     <div>
