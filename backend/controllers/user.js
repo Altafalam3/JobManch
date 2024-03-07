@@ -127,7 +127,18 @@ export const getUserById = async (req, res) => {
 
 export const updateInfo = async (req, res) => {
   const { id } = req.params;
-  const { bio, name } = req.body;
-  const updatedUser = await user.findByIdAndUpdate(id, { name, bio });
-  return updatedUser;
+  const { about, email, contact, tenth, twelfth, cgpa, roll, dob, department, passphrase, job, gender, drop, kt } = req.body;
+  try {
+    const updatedUser = await user.findByIdAndUpdate(id, { about, email, contact, tenth, twelfth, cgpa, roll, dob, department, passphrase, job, gender, drop, kt }, { new: true });
+    res.status(200).json(updatedUser);
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
 };
+
+// export const updateInfo = async (req, res) => {
+//   const { id } = req.params;
+//   const { bio, name } = req.body;
+//   const updatedUser = await user.findByIdAndUpdate(id, { name, bio });
+//   return updatedUser;
+// };
