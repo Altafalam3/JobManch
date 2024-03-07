@@ -12,6 +12,7 @@ import AdminForm from "./Pages/AdminForm.jsx";
 import Studentcal from "./Pages/Studentcal.jsx";
 import Forum from "./Pages/Forum.jsx";
 import Notification from "./Pages/Notification.jsx";
+import Post from "./Pages/Post.jsx";
 
 function App() {
     return (
@@ -33,6 +34,7 @@ function App() {
                         <Route path="/stucal" element={<Studentcal />} />
                         <Route path="/forum" element={<Forum/>} />
                         <Route path="/noti" element={<Notification/>} />
+                        <Route path="/post" element={<Post/>} />
                         
                         
                     </Routes>
