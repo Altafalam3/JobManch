@@ -1,4 +1,6 @@
 import React from 'react'
+import img1 from '../assets/undraw_Pic_profile_re_7g2h.png'
+import img2 from '../assets/undraw_Profile_pic_re_iwgo.png'
 
 const Notification = () => {
   return (
@@ -8,7 +10,7 @@ const Notification = () => {
         <ol className="mt-3 divide-y divider-gray-200 dark:divide-gray-700">
             <li>
                 <a href="#" className="items-center block p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700">
-                    <img className="w-12 h-12 mb-3 me-3 rounded-full sm:mb-0" src="/docs/images/people/profile-picture-1.jpg" alt="Jese Leos image"/>
+                    <img className="w-12 h-12 mb-3 me-3 rounded-full sm:mb-0" src={img1} alt="Jese Leos image"/>
                     <div className="text-gray-600 dark:text-gray-400">
                         <div className="text-base font-normal"><span className="font-medium text-gray-900 dark:text-white">Jese Leos</span> likes <span className="font-medium text-gray-900 dark:text-white">Bonnie Green's</span> post in <span className="font-medium text-gray-900 dark:text-white"> How to start with Flowbite library</span></div>
                         <div className="text-sm font-normal">"I wanted to share a webinar zeroheight."</div>
@@ -23,7 +25,7 @@ const Notification = () => {
             </li>
             <li>
                 <a href="#" className="items-center block p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700">
-                    <img className="w-12 h-12 mb-3 me-3 rounded-full sm:mb-0" src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie Green image"/>
+                    <img className="w-12 h-12 mb-3 me-3 rounded-full sm:mb-0" src={img2} alt="Bonnie Green image"/>
                     <div>
                         <div className="text-base font-normal text-gray-600 dark:text-gray-400"><span className="font-medium text-gray-900 dark:text-white">Bonnie Green</span> react to <span className="font-medium text-gray-900 dark:text-white">Thomas Lean's</span> comment</div>
                         <span className="inline-flex items-center text-xs font-normal text-gray-500 dark:text-gray-400">
@@ -44,7 +46,7 @@ const Notification = () => {
         <ol className="mt-3 divide-y divider-gray-200 dark:divide-gray-700">
             <li>
                 <a href="#" className="items-center block p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700">
-                    <img className="w-12 h-12 mb-3 me-3 rounded-full sm:mb-0" src="/docs/images/people/profile-picture-4.jpg" alt="Laura Romeros image"/>
+                    <img className="w-12 h-12 mb-3 me-3 rounded-full sm:mb-0" src={img1} alt="Laura Romeros image"/>
                     <div className="text-gray-600 dark:text-gray-400">
                         <div className="text-base font-normal"><span className="font-medium text-gray-900 dark:text-white">Laura Romeros</span> likes <span className="font-medium text-gray-900 dark:text-white">Bonnie Green's</span> post in <span className="font-medium text-gray-900 dark:text-white"> How to start with Flowbite library</span></div>
                         <div className="text-sm font-normal">"I wanted to share a webinar zeroheight."</div>
@@ -61,7 +63,7 @@ const Notification = () => {
             </li>
             <li>
                 <a href="#" className="items-center block p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700">
-                    <img className="w-12 h-12 mb-3 me-3 rounded-full sm:mb-0" src="/docs/images/people/profile-picture-2.jpg" alt="Mike Willi image"/>
+                    <img className="w-12 h-12 mb-3 me-3 rounded-full sm:mb-0" src={img2} alt="Mike Willi image"/>
                     <div>
                         <div className="text-base font-normal text-gray-600 dark:text-gray-400"><span className="font-medium text-gray-900 dark:text-white">Mike Willi</span> react to <span className="font-medium text-gray-900 dark:text-white">Thomas Lean's</span> comment</div>
                         <span className="inline-flex items-center text-xs font-normal text-gray-500 dark:text-gray-400">
@@ -75,7 +77,7 @@ const Notification = () => {
             </li>
             <li>
                 <a href="#" className="items-center block p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700">
-                    <img className="w-12 h-12 mb-3 me-3 rounded-full sm:mb-0" src="/docs/images/people/profile-picture-5.jpg" alt="Jese Leos image"/>
+                    <img className="w-12 h-12 mb-3 me-3 rounded-full sm:mb-0" src={img1} alt="Jese Leos image"/>
                     <div className="text-gray-600 dark:text-gray-400">
                         <div className="text-base font-normal"><span className="font-medium text-gray-900 dark:text-white">Jese Leos</span> likes <span className="font-medium text-gray-900 dark:text-white">Bonnie Green's</span> post in <span className="font-medium text-gray-900 dark:text-white"> How to start with Flowbite library</span></div>
                         <div className="text-sm font-normal">"I wanted to share a webinar zeroheight."</div>
@@ -90,7 +92,7 @@ const Notification = () => {
             </li>
             <li>
                 <a href="#" className="items-center block p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700">
-                    <img className="w-12 h-12 mb-3 me-3 rounded-full sm:mb-0" src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie Green image"/>
+                    <img className="w-12 h-12 mb-3 me-3 rounded-full sm:mb-0" src={img2} alt="Bonnie Green image"/>
                     <div className="text-gray-600 dark:text-gray-400">
                         <div className="text-base font-normal"><span className="font-medium text-gray-900 dark:text-white">Bonnie Green</span> likes <span className="font-medium text-gray-900 dark:text-white">Bonnie Green's</span> post in <span className="font-medium text-gray-900 dark:text-white"> Top figma designs</span></div>
                         <div className="text-sm font-normal">"I wanted to share a webinar zeroheight."</div>
