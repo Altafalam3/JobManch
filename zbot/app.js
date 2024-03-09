@@ -11,7 +11,7 @@ import PDFDocument from "pdfkit";
 import fs from "fs";
 import { stringify } from 'csv-stringify';
 
-const { Client, LocalAuth, MessageMedia } = WhatsAppWeb; // Access the necessary components
+const { Client, LocalAuth, MessageMedia } = WhatsAppWeb;
 
 // bot -----------
 const client = new Client({
@@ -46,17 +46,18 @@ client.on("disconnected", (reason) => {
 app.use(bodyParser.json());
 
 // chat notification
-app.post('/api/booking-notification', async (req, res) => {
-   const { phoneNumber, orderDetails, orderDate, userPhone, userName } = req.body;
+app.post('/api/notification', async (req, res) => {
+   const { details, companyName, date, stipend } = req.body;
    console.log(req.body);
 
-   if (!phoneNumber || !orderDetails || !orderDate || !userPhone || !userName) {
+   if (!details || !companyName || !date) {
       return res.status(400).json({ error: 'Invalid request. Phone number and details are required.' });
    }
 
    try {
-      // 917021578746@c.us
-      await bookingNotification(phoneNumber, orderDetails, orderDate, userPhone, userName);
+      for (const detail of details) {
+         await bookingNotification(detail, companyName, date, stipend);
+      }
 
       res.status(200).json({ success: true, message: 'Booking notification sent successfully.' });
    } catch (error) {
@@ -65,39 +66,26 @@ app.post('/api/booking-notification', async (req, res) => {
    }
 });
 
-
-async function bookingNotification(phoneNumber, orderDetails, orderDate, userPhone, userName) {
+async function bookingNotification(detail, companyName, date, stipend) {
    try {
-      const chatNum = `91${phoneNumber}@c.us`
-      const textmsg = `You have a new order just now from a ${userName}, Mobile Number is : ${userPhone}, Order Date : ${orderDate} and details are : ${orderDetails}`
+      const chatNum = `91${detail.phoneNumber}@c.us`;
+      const textmsg = `Greetings ${detail.userName}, ${companyName} is coming to the campus for internship roles. Date is as follows: ${date} and stipend is: ${stipend}`;
+
+      // Send WhatsApp message with attached PDF
       await client.sendMessage(chatNum, textmsg);
-      console.log("done")
+
+      const csvMedia = MessageMedia.fromFilePath("D:/zzzzzzz/SAKEC_COC/zbot/Barclays Campus placement.pdf");
+      await client.sendMessage(chatNum, csvMedia, {
+         caption: "Barclay's Job Description", sendMediaAsDocument: true
+      });
+
+
+      console.log("done");
    } catch (error) {
       console.error('Error sending WhatsApp message:', error);
    }
 }
 
-// Define the function to convert data to PDF
-async function convertDataToPDF(data) {
-   const pdfDoc = new PDFDocument();
-   pdfDoc.pipe(fs.createWriteStream("data.pdf")); // Save PDF to a file
-
-   pdfDoc.text("Data Details"); // Add your title or header
-
-   // Create a table header
-   const tableHeaders = ["Name", "Email", "Message"];
-   const headerText = tableHeaders.map(header => header.padEnd(30)).join(' ');
-   pdfDoc.text(headerText, { align: 'left' });
-
-   // Populate the table with data
-   data.forEach(item => {
-      const rowData = [item.name, item.email, item.message];
-      const rowText = rowData.map(cell => cell.padEnd(30)).join(' ');
-      pdfDoc.text(rowText, { align: 'left' });
-   });
-
-   pdfDoc.end();
-}
 
 // Function to convert JSON data to CSV
 async function convertDataToCSVAndSaveLocally(data) {
@@ -128,30 +116,57 @@ client.on("message", async (message) => {
       message.reply("Hiiiii");
    }
 
-   else if (text === "see orders") {
+   else if (text === "share interview preparation resources for adobe") {
       try {
-         // Fetch data from the server API
-         const number = chatId.substring(2, 12);
-         console.log(number)
-         const response = await axios.get(`http://localhost:8800/api/booking/bookingswp/${number}`);
-         const data = response.data;
-
-         // Convert data to CSV and save it locally
-         await convertDataToCSVAndSaveLocally(data);
-         
          // Send the CSV as a media message
-         const csvMedia = MessageMedia.fromFilePath("D:/DabbaWala/zdabbawala/orders.csv");
-         client.sendMessage(message.from, csvMedia, {
-            caption: "Order Details (CSV)",
+         const csvMedia = MessageMedia.fromFilePath("D:/zzzzzzz/SAKEC_COC/zbot/adobe_1year.csv");
+         client.sendMessage(chatId, csvMedia, {
+            caption: "Adobe Questions",
          });
 
-         // Delete the CSV file from local storage
-         // fs.unlinkSync("D:/DabbaWala/zdabbawala/orders.csv");
       } catch (error) {
          console.error("Error fetching or sending data:", error);
          message.reply("An error occurred while fetching data or generating CSV.");
       }
    }
+
+   else if (text === "share interview preparation resources for apple") {
+      try {
+         // Send the CSV as a media message
+         const csvMedia = MessageMedia.fromFilePath("D:/zzzzzzz/SAKEC_COC/zbot/apple_1year.csv");
+         client.sendMessage(chatId, csvMedia, {
+            caption: "Apple Questions",
+         });
+
+      } catch (error) {
+         console.error("Error fetching or sending data:", error);
+         message.reply("An error occurred while fetching data or generating CSV.");
+      }
+   }
+
+   else if (text === "most recent upcoming job") {
+      try {
+         let companyName="Barclays";
+         let date="04th September 2024";
+         let stipend = "75k / month";
+         // Send the CSV as a media message
+         // const chatNum = `91${detail.phoneNumber}@c.us`;
+         const textmsg = `Greetings , ${companyName} is coming to the campus for internship roles. Date is as follows: ${date} and stipend is: ${stipend}`;
+
+         // Send WhatsApp message with attached PDF
+         await client.sendMessage(chatId, textmsg);
+
+         const csvMedia = MessageMedia.fromFilePath("D:/zzzzzzz/SAKEC_COC/zbot/Barclays Campus placement.pdf");
+         await client.sendMessage(chatId, csvMedia, {
+            caption: "Barclay's Job Description", sendMediaAsDocument: true
+         });
+
+      } catch (error) {
+         console.error("Error fetching or sending data:", error);
+         message.reply("An error occurred while fetching data or generating CSV.");
+      }
+   }
+
 
 });
 
